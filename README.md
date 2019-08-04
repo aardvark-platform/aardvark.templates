@@ -36,5 +36,5 @@ $ dotnet run -c Release
 To uninstall template use:
 
 ```
-$ dotnet new --unistall <full_path_to_template>
+$ dotnet new --uninstall <full_path_to_template>
 ```
