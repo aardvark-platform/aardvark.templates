@@ -20,7 +20,7 @@ $ dotnet new aardvark.ui --backend opengl
 ```
 
 For now there are two backends that are available for aardvark applications: OpenGL and Vulkan.
-You can choose between then using parameter `--backend`. You can see description of the parameter:
+You can choose between them using parameter `--backend`. You can see description of the parameter:
 
 ```
 $ dotnet new aardvark.ui --help
