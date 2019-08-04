@@ -7,7 +7,7 @@ See [`template.json`](./Aardvark.Template.UI.FSharp/.template.config/template.js
 First you need to install template (it's not available on NuGet right now):
 
 ```
-$ git clone https://github.com/gsomix/aardvark.temlpate.ui.git
+$ git clone https://github.com/gsomix/aardvark.template.ui.git
 $ dotnet new --install .\aardvark.template.ui\Aardvark.Template.UI.FSharp\
 ```
 
