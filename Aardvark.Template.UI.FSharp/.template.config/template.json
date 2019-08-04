@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Evgeniy Andreev, aardvark contributors",
+  "classifications": [ "Console" ], 
+  "name": "Aardvark.UI Application",
+  "identity": "Aardvark.Template.UI.FSharp",         
+  "groupIdentity": "Aardvark.Template.UI",
+  "shortName": "aardvark.ui",
+  "tags": {
+    "language": "F#",
+    "type": "project"
+  },
+  "sourceName": "Aardvark.Template.UI",
+  "preferNameDirectory": true,
+  "symbols": {
+    "backend": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "opengl",
+      "choices": [
+        {
+          "choice": "opengl",
+          "description": "OpenGL backend"
+        },
+        {
+          "choice": "vulkan",
+          "description": "Vulkan backend"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "exclude": [ "Aardvark.Template.UI*.fsproj", "Program*.fs"],
+      "modifiers":[
+        {
+          "include": "Aardvark.Template.UI.OpenGL.fsproj",
+          "condition": "(backend == \"opengl\")",
+          "rename": {"Aardvark.Template.UI.OpenGL.fsproj": "Aardvark.Template.UI.fsproj"}
+        },
+        {
+          "include": "Aardvark.Template.UI.Vulkan.fsproj",
+          "condition": "(backend == \"vulkan\")",
+          "rename": {"Aardvark.Template.UI.Vulkan.fsproj": "Aardvark.Template.UI.fsproj"}
+        },
+        {
+          "include": "Program.OpenGL.fs",
+          "condition": "(backend == \"opengl\")",
+          "rename": {"Program.OpenGL.fs": "Program.fs"}
+        },
+        {
+          "include": "Program.Vulkan.fs",
+          "condition": "(backend == \"vulkan\")",
+          "rename": {"Program.Vulkan.fs": "Program.fs"}
+        }
+      ]
+    }
+  ]
+}
