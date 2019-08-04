@@ -8,7 +8,7 @@ First you need to install template (it's not available on NuGet right now):
 
 ```
 $ git clone https://github.com/gsomix/aardvark.temlpate.ui.git
-$ dotnet new --install .\aardvark.temlpate.ui\Aardvark.Template.UI.FSharp\
+$ dotnet new --install .\aardvark.template.ui\Aardvark.Template.UI.FSharp\
 ```
 
 Then create new application:
@@ -31,4 +31,10 @@ After creation our test application let's build and run it:
 ```
 $ dotnet build
 $ dotnet run -c Release
+```
+
+To uninstall template use:
+
+```
+$ dotnet new --unistall <full_path_to_template>
 ```

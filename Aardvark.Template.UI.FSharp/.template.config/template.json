@@ -19,14 +19,13 @@
       "defaultValue": "opengl",
       "choices": [
         {
-          "choice": "opengl",
-          "description": "OpenGL backend"
+          "choice": "opengl"
         },
         {
-          "choice": "vulkan",
-          "description": "Vulkan backend"
+          "choice": "vulkan"
         }
-      ]
+      ],
+      "description": "Graphical API will be used for rendering your application"
     }
   },
   "sources": [
