@@ -1,44 +1,68 @@
-﻿module Inc.App
-open Aardvark.UI
-open Aardvark.UI.Primitives
+﻿namespace Aardvark.Template.UI
 
+open System
 open Aardvark.Base
 open Aardvark.Base.Incremental
+open Aardvark.UI
+open Aardvark.UI.Primitives
 open Aardvark.Base.Rendering
-open Inc.Model
+open __PROJECT_NAME__.Model
 
-let update (model : Model) (msg : Message) =
-    match msg with
-        Inc -> { model with value = model.value + 1 }
+type Message =
+    | ToggleModel
+    | CameraMessage of FreeFlyController.Message
 
-let view (model : MModel) =
-    div [] [
-        text "Hello World"
-        br []
-        button [onClick (fun _ -> Inc)] [text "Increment"]
-        text "    "
-        Incremental.text (model.value |> Mod.map string)
-        br []
-        img [
-            attribute "src" "https://upload.wikimedia.org/wikipedia/commons/6/67/SanWild17.jpg"; 
-            attribute "alt" "aardvark"
-            style "max-width: 80%; max-height: 80%"
-        ]
-    ]
+module App =
+    
+    let initial = { currentModel = Box; cameraState = FreeFlyController.initial }
 
+    let update (m : Model) (msg : Message) =
+        match msg with
+            | ToggleModel -> 
+                match m.currentModel with
+                    | Box -> { m with currentModel = Sphere }
+                    | Sphere -> { m with currentModel = Box }
 
-let threads (model : Model) = 
-    ThreadPool.empty
+            | CameraMessage msg ->
+                { m with cameraState = FreeFlyController.update m.cameraState msg }
 
+    let view (m : MModel) =
 
-let app =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
-    {
-        unpersist = Unpersist.instance     
-        threads = threads 
-        initial = 
-            { 
-               value = 0
+        let frustum = 
+            Frustum.perspective 60.0 0.1 100.0 1.0 
+                |> Mod.constant
+
+        let sg =
+            m.currentModel |> Mod.map (fun v ->
+                match v with
+                    | Box -> Sg.box (Mod.constant C4b.Red) (Mod.constant (Box3d(-V3d.III, V3d.III)))
+                    | Sphere -> Sg.sphere 5 (Mod.constant C4b.Green) (Mod.constant 1.0)
+            )
+            |> Sg.dynamic
+            |> Sg.shader {
+                do! DefaultSurfaces.trafo
+                do! DefaultSurfaces.simpleLighting
             }
-        update = update 
-        view = view
-    }
+
+        let att =
+            [
+                style "position: fixed; left: 0; top: 0; width: 100%; height: 100%"
+            ]
+
+        body [] [
+            FreeFlyController.controlledControl m.cameraState CameraMessage frustum (AttributeMap.ofList att) sg
+
+            div [style "position: fixed; left: 20px; top: 20px"] [
+                button [onClick (fun _ -> ToggleModel)] [text "Toggle Model"]
+            ]
+
+        ]
+
+    let app =
+        {
+            initial = initial
+            update = update
+            view = view
+            threads = Model.Lens.cameraState.Get >> FreeFlyController.threads >> ThreadPool.map CameraMessage
+            unpersist = Unpersist.instance
+        }

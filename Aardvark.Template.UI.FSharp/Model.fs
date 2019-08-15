@@ -1,14 +1,18 @@
-﻿namespace Inc.Model
+﻿namespace Aardvark.Template.UI.Model
 
+open System
 open Aardvark.Base
 open Aardvark.Base.Incremental
 open Aardvark.UI.Primitives
 
-type Message = 
-    | Inc
+type Primitive =
+    | Box
+    | Sphere
+
 
 [<DomainType>]
-type Model = 
+type Model =
     {
-        value : int
+        currentModel    : Primitive
+        cameraState     : CameraControllerState
     }

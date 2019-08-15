@@ -1,50 +1,34 @@
-﻿open System
-open Aardvark.Base
-open Aardvark.Application
-open Aardvark.Application.Slim
-open Aardvark.UI
-open Aardium
-open Inc
+﻿open Aardvark.Template.UI
 
+open Aardium
+open Aardvark.Service
+open Aardvark.UI
 open Suave
 open Suave.WebPart
+open Aardvark.Rendering.Vulkan
+open Aardvark.Base
+open System
 
-[<EntryPoint; STAThread>]
-let main argv = 
+
+
+
+[<EntryPoint>]
+let main args =
     Ag.initialize()
     Aardvark.Init()
     Aardium.init()
 
-    use app = new VulkanApplication()
-    let instance = App.app |> App.start
+    let app = new HeadlessVulkanApplication()
 
-    // use can use whatever suave server to start you mutable app. 
-    // startServerLocalhost is one of the convinience functions which sets up 
-    // a server without much boilerplate.
-    // there is also WebPart.startServer and WebPart.runServer. 
-    // look at their implementation here: https://github.com/aardvark-platform/aardvark.media/blob/master/src/Aardvark.Service/Suave.fs#L10
-    // if you are unhappy with them, you can always use your own server config.
-    // the localhost variant does not require to allow the port through your firewall.
-    // the non localhost variant runs in 127.0.0.1 which enables remote acces (e.g. via your mobile phone)
-    WebPart.startServerLocalhost 4321 [ 
-        MutableApp.toWebPart' app.Runtime false instance
-        Suave.Files.browseHome
+    WebPart.startServer 4321 [
+        MutableApp.toWebPart' app.Runtime false (App.start App.app)
     ] |> ignore
-
+    
     Aardium.run {
-        url "http://localhost:4321/"
+        title "Aardvark rocks \\o/"
         width 1024
         height 768
-        debug true
+        url "http://localhost:4321/"
     }
 
-    //use ctrl = new AardvarkCefBrowser()
-    //ctrl.Dock <- DockStyle.Fill
-    //form.Controls.Add ctrl
-    //ctrl.StartUrl <- "http://localhost:4321/"
-    //ctrl.ShowDevTools()
-    //form.Text <- "Examples"
-    //form.Icon <- Icons.aardvark 
-
-    //Application.Run form
-    0 
+    0
