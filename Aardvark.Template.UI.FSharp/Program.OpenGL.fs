@@ -6,6 +6,8 @@ open Aardvark.UI
 open Suave
 open Suave.WebPart
 open Aardvark.Rendering.GL
+open Aardvark.Application
+open Aardvark.Application.Slim
 open Aardvark.Base
 open System
 
@@ -15,7 +17,7 @@ let main args =
     Aardvark.Init()
     Aardium.init()
 
-    let app = new HeadlessOpenGlApplication()
+    let app = new OpenGlApplication()
 
     WebPart.startServer 4321 [
         MutableApp.toWebPart' app.Runtime false (App.start App.app)

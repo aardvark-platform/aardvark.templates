@@ -6,7 +6,7 @@ open Aardvark.Base.Incremental
 open Aardvark.UI
 open Aardvark.UI.Primitives
 open Aardvark.Base.Rendering
-open __PROJECT_NAME__.Model
+open Aardvark.Template.UI.Model
 
 type Message =
     | ToggleModel

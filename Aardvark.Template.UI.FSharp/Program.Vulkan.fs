@@ -9,9 +9,6 @@ open Aardvark.Rendering.Vulkan
 open Aardvark.Base
 open System
 
-
-
-
 [<EntryPoint>]
 let main args =
     Ag.initialize()
