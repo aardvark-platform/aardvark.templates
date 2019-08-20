@@ -30,27 +30,35 @@
   },
   "sources": [
     {
-      "exclude": [ "Aardvark.Template.UI*.fsproj", "Program*.fs"],
+      "exclude": [ "OpenGL/**", "Vulkan/**", ".template.config/**/*"],
       "modifiers":[
         {
-          "include": "Aardvark.Template.UI.OpenGL.fsproj",
+          "include": "OpenGL/**",
+          "exclude": [
+            "OpenGL/[Bb]in/**",
+            "OpenGL/[Oo]bj/**",
+            "OpenGL/.domaincache",
+            "OpenGL/*.g.fs"
+          ],
           "condition": "(backend == \"opengl\")",
-          "rename": {"Aardvark.Template.UI.OpenGL.fsproj": "Aardvark.Template.UI.fsproj"}
+          "rename": {"OpenGL/Aardvark.Template.UI.OpenGL.fsproj": "Aardvark.Template.UI.fsproj",
+            "OpenGL/Program.fs": "Program.fs",
+            "OpenGL/App.fs": "App.fs",
+            "OpenGL/Model.fs": "Model.fs"}
         },
         {
-          "include": "Aardvark.Template.UI.Vulkan.fsproj",
+          "include": "Vulkan/**",
+          "exclude": [
+            "Vulkan/[Bb]in/**",
+            "Vulkan/[Oo]bj/**",
+            "Vulkan/.domaincache",
+            "Vulkan/*.g.fs"
+          ],
           "condition": "(backend == \"vulkan\")",
-          "rename": {"Aardvark.Template.UI.Vulkan.fsproj": "Aardvark.Template.UI.fsproj"}
-        },
-        {
-          "include": "Program.OpenGL.fs",
-          "condition": "(backend == \"opengl\")",
-          "rename": {"Program.OpenGL.fs": "Program.fs"}
-        },
-        {
-          "include": "Program.Vulkan.fs",
-          "condition": "(backend == \"vulkan\")",
-          "rename": {"Program.Vulkan.fs": "Program.fs"}
+          "rename": {"Vulkan/Aardvark.Template.UI.Vulkan.fsproj": "Aardvark.Template.UI.fsproj",
+            "Vulkan/Program.fs": "Program.fs",
+            "Vulkan/App.fs": "App.fs",
+            "Vulkan/Model.fs": "Model.fs"}
         }
       ]
     }
