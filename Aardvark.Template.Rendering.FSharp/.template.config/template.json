@@ -30,27 +30,28 @@
   },
   "sources": [
     {
-      "exclude": [ "Aardvark.Template.Rendering*.fsproj", "Program*.fs"],
+      "exclude": [ "**/OpenGL/**", "**/Vulkan/**",
+        ".template.config/**/*", "**/*.filelist", "**/*.user", "**/*.lock.json"],
       "modifiers":[
         {
-          "include": "Aardvark.Template.Rendering.OpenGL.fsproj",
+          "include": "OpenGL/Aardvark.Template.Rendering.OpenGL.fsproj",
           "condition": "(backend == \"opengl\")",
-          "rename": {"Aardvark.Template.Rendering.OpenGL.fsproj": "Aardvark.Template.Rendering.fsproj"}
+          "rename": {"OpenGL/Aardvark.Template.Rendering.OpenGL.fsproj": "Aardvark.Template.Rendering.fsproj"}
         },
         {
-          "include": "Aardvark.Template.Rendering.Vulkan.fsproj",
+          "include": "Vulkan/Aardvark.Template.Rendering.Vulkan.fsproj",
           "condition": "(backend == \"vulkan\")",
-          "rename": {"Aardvark.Template.Rendering.Vulkan.fsproj": "Aardvark.Template.Rendering.fsproj"}
+          "rename": {"Vulkan/Aardvark.Template.Rendering.Vulkan.fsproj": "Aardvark.Template.Rendering.fsproj"}
         },
         {
-          "include": "Program.OpenGL.fs",
+          "include": "OpenGL/Program.fs",
           "condition": "(backend == \"opengl\")",
-          "rename": {"Program.OpenGL.fs": "Program.fs"}
+          "rename": {"OpenGL/Program.fs": "Program.fs"}
         },
         {
-          "include": "Program.Vulkan.fs",
+          "include": "Vulkan/Program.fs",
           "condition": "(backend == \"vulkan\")",
-          "rename": {"Program.Vulkan.fs": "Program.fs"}
+          "rename": {"Vulkan/Program.fs": "Program.fs"}
         }
       ]
     }
