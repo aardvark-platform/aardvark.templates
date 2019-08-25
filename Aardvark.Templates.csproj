@@ -6,7 +6,7 @@
     <PackageId>Aardvark.Templates</PackageId>
     <Title>Aardvark Platform Templates</Title>
     <Authors>Aardvark Platform contributors</Authors>
-    <Description>.NET Core SDK templates for bootstrapping new Aardvark projects (including all necessary dependencies).</Description>
+    <Description>.NET Core SDK templates for bootstrapping new Aardvark projects.</Description>
     <PackageTags>dotnet-new;templates;contoso</PackageTags>
     <TargetFramework>netstandard2.0</TargetFramework>
 
