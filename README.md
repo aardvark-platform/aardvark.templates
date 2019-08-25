@@ -1,17 +1,27 @@
-Experimental .NET Core template for Aardvark.UI applications.
+.NET Core SDK templates for bootstrapping new Aardvark projects.
 
-See [`template.json`](./Aardvark.Template.UI.FSharp/.template.config/template.json)
-
-# How to test
-
-First you need to install template (it's not available on NuGet right now):
+# Install
 
 ```
-$ git clone https://github.com/gsomix/aardvark.template.ui.git
-$ dotnet new --install .\aardvark.template.ui\Aardvark.Template.UI.FSharp\
+$ dotnet new -i Aardvark.Templates --nuget-source https://www.myget.org/F/gsomix/api/v3/index.json
 ```
 
-Then create new application:
+# How to create project
+
+After installation two templates will be added:
+
+```
+$ dotnet new
+
+...
+
+Templates                                         Short Name              Language          Tags
+-------------------------------------------------------------------------------------------------------
+Aardvark.Rendering Application                    aardvark.rendering      F#                Console
+Aardvark.UI Application                           aardvark.ui             F#                Console
+```
+
+To create project use `dotnet new` command:
 
 ```
 $ mkdir TestApp
@@ -19,7 +29,7 @@ $ cd TestApp
 $ dotnet new aardvark.ui --backend opengl
 ```
 
-For now there are two backends that are available for aardvark applications: OpenGL and Vulkan.
+There are two backends that are available for aardvark applications: OpenGL and Vulkan.
 You can choose between them using parameter `--backend`. You can see description of the parameter:
 
 ```
@@ -33,8 +43,17 @@ $ dotnet build
 $ dotnet run -c Release
 ```
 
-To uninstall template use:
+# Build
+
+To build and test templates from package use `dotnet pack`:
 
 ```
-$ dotnet new --uninstall <full_path_to_template>
+$ dotnet pack -c Release
+$ dotnet new -i .\bin\Release\Aardvark.Templates.1.0.0.nupkg
+```
+
+All templates' projects are also runnable from repository, it might be useful for testing:
+
+```
+$ dotnet run -c Release -p .\templates\Aardvark.Template.Rendering.FSharp\OpenGL\Aardvark.Template.Rendering.OpenGL.fsproj
 ```
