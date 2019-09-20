@@ -23,11 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aardvark.Application.Slim.GL" Version="4.10.3" />
-    <PackageReference Include="Aardvark.SceneGraph" Version="4.10.3" />
-    <PackageReference Include="Aardvark.UI" Version="4.5.14" />
-    <PackageReference Include="Aardvark.UI.Primitives" Version="4.5.14" />
-    <PackageReference Include="Suave" Version="2.2.1" />
+    <PackageReference Include="SourceLink.Embed.PaketFiles" Version="2.1.1" />
+    <PackageReference Include="Aardvark.Application.Slim.GL" Version="4.11.0" />
+    <PackageReference Include="Aardvark.UI" Version="4.6.0" />
+    <PackageReference Include="Aardvark.UI.Primitives" Version="4.6.0" />
     <PackageReference Include="Aardium" Version="1.0.21" />
   </ItemGroup>
 
