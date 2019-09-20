@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/template",
-  "author": "Aardvark Platform contributors",
-  "classifications": [ "Console" ], 
+  "author": "Aardvark Platform Team",
+  "classifications": [ "Aardvark" ], 
   "name": "Aardvark.UI Application",
   "identity": "Aardvark.Template.UI.FSharp",         
   "groupIdentity": "Aardvark.Template.UI",

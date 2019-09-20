@@ -17,8 +17,8 @@ $ dotnet new
 
 Templates                                         Short Name              Language          Tags
 -------------------------------------------------------------------------------------------------------
-Aardvark.Rendering Application                    aardvark.rendering      F#                Console
-Aardvark.UI Application                           aardvark.ui             F#                Console
+Aardvark.Rendering Application                    aardvark.rendering      F#                Aardvark
+Aardvark.UI Application                           aardvark.ui             F#                Aardvark
 ```
 
 To create project use `dotnet new` command:
