@@ -3,7 +3,7 @@
 # Install
 
 ```
-$ dotnet new -i Aardvark.Templates --nuget-source https://www.myget.org/F/gsomix/api/v3/index.json
+$ dotnet new -i Aardvark.Templates
 ```
 
 # How to create project
