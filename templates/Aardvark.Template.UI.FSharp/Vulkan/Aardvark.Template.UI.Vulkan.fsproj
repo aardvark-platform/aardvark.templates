@@ -28,6 +28,7 @@
     <PackageReference Include="Aardvark.UI" Version="4.6.3" />
     <PackageReference Include="Aardvark.UI.Primitives" Version="4.6.3" />
     <PackageReference Include="Aardium" Version="1.0.21" />
+    <PackageReference Include="Aardvark.Base" Version="4.5.22" />
   </ItemGroup>
 
 </Project>

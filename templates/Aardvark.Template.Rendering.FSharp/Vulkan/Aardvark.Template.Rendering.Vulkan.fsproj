@@ -23,6 +23,7 @@
   <ItemGroup>
     <PackageReference Include="Aardvark.Application.Slim.Vulkan" Version="4.12.3" />
     <PackageReference Include="Aardvark.SceneGraph" Version="4.12.3" />
+    <PackageReference Include="Aardvark.Base" Version="4.5.22" />
   </ItemGroup>
 
 </Project>
