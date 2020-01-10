@@ -2,7 +2,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -21,10 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
-  	<PackageReference Include="FSharp.Core" Version="4.6.2" />
-    <PackageReference Include="Aardvark.Application.Slim.GL" Version="4.12.3" />
+    <PackageReference Include="Aardvark.Application.Slim.Vulkan" Version="4.12.3" />
     <PackageReference Include="Aardvark.SceneGraph" Version="4.12.3" />
-    <PackageReference Include="Aardvark.Base" Version="4.5.22" />
+
+    <PackageReference Update="FSharp.Core" Version="4.6.2" />
+    <PackageReference Update="Aardvark.Base" Version="4.5.22" />
   </ItemGroup>
 
 </Project>
