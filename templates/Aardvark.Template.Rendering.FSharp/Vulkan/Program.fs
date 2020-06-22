@@ -1,17 +1,16 @@
 ﻿open System
 open Aardvark.Base
-open Aardvark.Base.Incremental
 open Aardvark.Base.Rendering
 open Aardvark.SceneGraph
 open Aardvark.Application
 open Aardvark.Application.Slim
+open FSharp.Data.Adaptive
 
 [<EntryPoint;STAThread>]
 let main argv = 
-    Ag.initialize()
     Aardvark.Init()
 
-    use app = new VulkanApplication(true)
+    use app = new VulkanApplication()
     use win = app.CreateGameWindow(8)
 
     let quadGeometry =
@@ -28,7 +27,7 @@ let main argv =
 
     let initialView = CameraView.lookAt (V3d(6,6,6)) V3d.Zero V3d.OOI
     let view = initialView |> DefaultCameraController.control win.Mouse win.Keyboard win.Time
-    let proj = win.Sizes |> Mod.map (fun s -> Frustum.perspective 60.0 0.1 100.0 (float s.X / float s.Y))
+    let proj = win.Sizes |> AVal.map (fun s -> Frustum.perspective 60.0 0.1 100.0 (float s.X / float s.Y))
 
 
     let sg =
@@ -38,8 +37,8 @@ let main argv =
                 DefaultSurfaces.trafo |> toEffect
                 DefaultSurfaces.vertexColor |> toEffect
                ]
-            |> Sg.viewTrafo (view |> Mod.map CameraView.viewTrafo)
-            |> Sg.projTrafo (proj |> Mod.map Frustum.projTrafo)
+            |> Sg.viewTrafo (view |> AVal.map CameraView.viewTrafo)
+            |> Sg.projTrafo (proj |> AVal.map Frustum.projTrafo)
 
     
     let task =

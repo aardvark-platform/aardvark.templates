@@ -1,21 +1,17 @@
 ﻿open Aardvark.Template.UI
 
-open Aardium
-open Aardvark.Service
-open Aardvark.UI
-open Suave
-open Suave.WebPart
-open Aardvark.Rendering.Vulkan
 open Aardvark.Base
-open System
+open Aardvark.UI
+open Aardvark.Application.Slim
+open Aardium
+open Suave
 
 [<EntryPoint>]
 let main args =
-    Ag.initialize()
     Aardvark.Init()
     Aardium.init()
 
-    let app = new HeadlessVulkanApplication()
+    let app = new VulkanApplication()
 
     WebPart.startServer 4321 [
         MutableApp.toWebPart' app.Runtime false (App.start App.app)
