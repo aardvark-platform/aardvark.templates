@@ -39,8 +39,9 @@ $ dotnet new aardvark.ui --help
 After creation our test application let's build and run it:
 
 ```
-$ dotnet build
-$ dotnet run -c Release
+$ dotnet tool restore
+$ dotnet paket restore
+$ dotnet run -c Release -p .\src\TestApp\TestApp.fsproj
 ```
 
 # Build
@@ -49,11 +50,14 @@ To build and test templates from package use `dotnet pack`:
 
 ```
 $ dotnet pack -c Release
-$ dotnet new -i .\bin\Release\Aardvark.Templates.1.0.0.nupkg
+$ dotnet new -i .\bin\Release\Aardvark.Templates.2.0.0.nupkg
 ```
 
 All templates' projects are also runnable from repository, it might be useful for testing:
 
 ```
-$ dotnet run -c Release -p .\templates\Aardvark.Template.Rendering.FSharp\OpenGL\Aardvark.Template.Rendering.OpenGL.fsproj
+$ cd .\templates\Aardvark.Template.Rendering.FSharp\OpenGL\
+$ dotnet tool restore
+$ dotnet paket restore
+$ dotnet run -c Release -p .\src\Aardvark.Template.Rendering\Aardvark.Template.Rendering.fsproj
 ```
