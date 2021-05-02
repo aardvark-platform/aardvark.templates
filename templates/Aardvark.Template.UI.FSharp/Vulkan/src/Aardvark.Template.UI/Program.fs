@@ -1,4 +1,4 @@
-﻿open Aardvark.Template.UI.Model
+﻿open Aardvark.Template.UI
 
 open System
 open FSharp.Data.Adaptive
