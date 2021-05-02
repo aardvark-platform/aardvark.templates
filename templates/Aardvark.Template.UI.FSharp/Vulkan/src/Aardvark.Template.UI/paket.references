@@ -10,3 +10,9 @@ Aardvark.Application.Slim
 Aardvark.Application.Slim.Vulkan
 Aardvark.SceneGraph
 Aardvark.SceneGraph.IO
+
+Aardvark.Service
+Aardvark.UI
+Aardvark.UI.Primitives
+Adaptify.MSBuild
+Aardium

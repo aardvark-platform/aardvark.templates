@@ -1,10 +1,12 @@
 ﻿namespace Aardvark.Template.UI
 
+open System
+open FSharp.Data.Adaptive
+
 open Aardvark.Base
-open Aardvark.Base.Rendering
+open Aardvark.Rendering
 open Aardvark.UI
 open Aardvark.UI.Primitives
-open FSharp.Data.Adaptive
 
 open Aardvark.Template.UI.Model
 
