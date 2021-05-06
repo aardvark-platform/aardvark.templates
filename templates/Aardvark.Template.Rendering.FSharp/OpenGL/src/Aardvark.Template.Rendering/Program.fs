@@ -1,6 +1,6 @@
 ﻿open System
 open Aardvark.Base
-open Aardvark.Base.Rendering
+open Aardvark.Rendering
 open Aardvark.SceneGraph
 open Aardvark.Application
 open Aardvark.Application.Slim
@@ -10,8 +10,8 @@ open FSharp.Data.Adaptive
 let main argv = 
     Aardvark.Init()
 
-    use app = new VulkanApplication()
-    use win = app.CreateGameWindow(8)
+    use app = new OpenGlApplication()
+    use win = app.CreateGameWindow(4)
 
     let quadGeometry =
         IndexedGeometry(

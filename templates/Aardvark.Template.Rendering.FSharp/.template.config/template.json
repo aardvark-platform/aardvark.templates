@@ -33,24 +33,42 @@
       "exclude": [ "OpenGL/**", "Vulkan/**", ".template.config/**/*"],
       "modifiers":[
         {
-          "include": "OpenGL/**",
+          "include": ["OpenGL/**", "OpenGL/.config/**", "OpenGL/src/**"],
           "exclude": [
-            "OpenGL/[Bb]in/**",
-            "OpenGL/[Oo]bj/**"
+            "OpenGL/.paket/**",
+            "OpenGL/paket-files/**",
+            "OpenGL/Aardvark.log",
+            "OpenGL/src/[Bb]in/**",
+            "OpenGL/src/[Oo]bj/**"
           ],
           "condition": "(backend == \"opengl\")",
-          "rename": {"OpenGL/Aardvark.Template.Rendering.OpenGL.fsproj": "Aardvark.Template.Rendering.fsproj",
-            "OpenGL/Program.fs": "Program.fs"}
+          "rename": {"OpenGL/.config/dotnet-tools.json": ".config/dotnet-tools.json",
+            "OpenGL/paket.dependencies": "paket.dependencies",
+            "OpenGL/paket.lock": "paket.lock",
+            "OpenGL/.gitignore": ".gitignore",
+
+            "OpenGL/src/Aardvark.Template.Rendering/Aardvark.Template.Rendering.fsproj": "src/Aardvark.Template.Rendering/Aardvark.Template.Rendering.fsproj",
+            "OpenGL/src/Aardvark.Template.Rendering/Program.fs": "src/Aardvark.Template.Rendering/Program.fs",
+            "OpenGL/src/Aardvark.Template.Rendering/paket.references": "src/Aardvark.Template.Rendering/paket.references"}
         },
         {
-          "include": "Vulkan/**",
+          "include": ["Vulkan/**", "Vulkan/.config/**", "Vulkan/src/**"],
           "exclude": [
-            "Vulkan/[Bb]in/**",
-            "Vulkan/[Oo]bj/**"
+            "Vulkan/.paket/**",
+            "Vulkan/paket-files/**",
+            "Vulkan/Aardvark.log",
+            "Vulkan/src/[Bb]in/**",
+            "Vulkan/src/[Oo]bj/**"
           ],
           "condition": "(backend == \"vulkan\")",
-          "rename": {"Vulkan/Aardvark.Template.Rendering.Vulkan.fsproj": "Aardvark.Template.Rendering.fsproj",
-            "Vulkan/Program.fs": "Program.fs"}
+          "rename": {"Vulkan/.config/dotnet-tools.json": ".config/dotnet-tools.json",
+            "Vulkan/paket.dependencies": "paket.dependencies",
+            "Vulkan/paket.lock": "paket.lock",
+            "Vulkan/.gitignore": ".gitignore",
+
+            "Vulkan/src/Aardvark.Template.Rendering/Aardvark.Template.Rendering.fsproj": "src/Aardvark.Template.Rendering/Aardvark.Template.Rendering.fsproj",
+            "Vulkan/src/Aardvark.Template.Rendering/Program.fs": "src/Aardvark.Template.Rendering/Program.fs",
+            "Vulkan/src/Aardvark.Template.Rendering/paket.references": "src/Aardvark.Template.Rendering/paket.references"}
         }
       ]
     }

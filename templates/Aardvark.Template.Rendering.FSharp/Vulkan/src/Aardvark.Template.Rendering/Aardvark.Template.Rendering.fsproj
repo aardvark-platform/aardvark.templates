@@ -8,8 +8,5 @@
     <Compile Include="Program.fs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Aardvark.Application.Slim.Vulkan" Version="5.0.7" />
-    <PackageReference Include="Aardvark.SceneGraph" Version="5.0.7" />
-  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

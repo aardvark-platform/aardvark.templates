@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.2</PackageVersion>
+    <PackageVersion>2.0</PackageVersion>
     <PackageId>Aardvark.Templates</PackageId>
     <Title>Aardvark Platform Templates</Title>
     <Authors>Aardvark Platform Team</Authors>
@@ -13,6 +13,7 @@
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
   </PropertyGroup>
 
   <ItemGroup>
