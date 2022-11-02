@@ -1,0 +1,16 @@
+bin/Release
+bin/Debug
+*.swp
+*.userprefs
+**/obj
+**/bin
+**/.vs
+/packages
+!/packages/*.config
+/src/*.suo
+/bin/*.nupkg
+/src/.vs
+/paket-files
+/.fake
+/.paket
+/Aardvark.log
