@@ -46,18 +46,14 @@ After the test application has been created, it can be built via the `build.cmd`
 
 # Build
 
-To build and test templates from package use `dotnet pack`:
+To build and test templates from package use `aardpack` and install the resulting `*.nupkg`:
 
 ```
-$ dotnet pack -c Release
-$ dotnet new -i .\bin\Release\Aardvark.Templates.2.0.0.nupkg
-```
-
-All templates' projects are also runnable from repository, it might be useful for testing:
-
-```
-$ cd .\templates\Aardvark.Template.Rendering.FSharp\OpenGL\
 $ dotnet tool restore
-$ dotnet paket restore
-$ dotnet run -c Release -p .\src\Aardvark.Template.Rendering\Aardvark.Template.Rendering.fsproj
+$ dotnet aardpack Aardvark.Templates.csproj
+$ dotnet new -i .\bin\pack\*.nupkg
 ```
+
+# Packages
+
+Update `RELEASE_NOTES.md` to trigger the CI to build and push a new Aardvark.Templates package.
