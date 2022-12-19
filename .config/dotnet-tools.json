@@ -1,0 +1,12 @@
+{
+    "version": 1,
+    "isRoot": true,
+    "tools": {
+      "aardpack": {
+        "version": "1.0.14",
+        "commands": [
+          "aardpack"
+        ]
+      }
+    }
+  }

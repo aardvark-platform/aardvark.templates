@@ -1,0 +1,17 @@
+type file
+id Aardvark.Templates
+title Aardvark Platform Templates
+authors Aardvark Platform Team
+owners Aardvark Platform Team
+projectUrl http://github.com/aardvark-platform
+repositoryType git
+repositoryUrl https://github.com/aardvark-platform/aardvark.base
+licenseUrl https://github.com/aardvark-platform/aardvark.templates/blob/master/LICENSE
+packageTypes
+    Template
+description
+    .NET Core SDK templates for bootstrapping new Aardvark projects.
+tags
+    dotnet-new templates aardvark
+files
+    templates ==> content/templates

@@ -1,9 +1,9 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Aardvark Platform Team",
-  "classifications": [ "Aardvark" ], 
+  "classifications": [ "Aardvark" ],
   "name": "Aardvark.UI Application",
-  "identity": "Aardvark.Template.UI.FSharp",         
+  "identity": "Aardvark.Template.UI.FSharp",
   "groupIdentity": "Aardvark.Template.UI",
   "shortName": "aardvark.ui",
   "tags": {
@@ -30,49 +30,26 @@
   },
   "sources": [
     {
-      "exclude": [ "OpenGL/**", "Vulkan/**", ".template.config/**/*"],
-      "modifiers":[
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        ".paket/*",
+        "paket-files/*",
+        ".template.config/*",
+        "bin/*",
+        "**/obj/*"
+      ]
+    }
+  ],
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "build.cmd"
+      },
+      "manualInstructions": [
         {
-          "include": ["OpenGL/**", "OpenGL/.config/**", "OpenGL/src/**"],
-          "exclude": [
-            "OpenGL/.paket/**",
-            "OpenGL/paket-files/**",
-            "OpenGL/Aardvark.log",
-            "OpenGL/src/[Bb]in/**",
-            "OpenGL/src/[Oo]bj/**"
-          ],
-          "condition": "(backend == \"opengl\")",
-          "rename": {"OpenGL/.config/dotnet-tools.json": ".config/dotnet-tools.json",
-            "OpenGL/paket.dependencies": "paket.dependencies",
-            "OpenGL/paket.lock": "paket.lock",
-            "OpenGL/.gitignore": ".gitignore",
-
-            "OpenGL/src/Aardvark.Template.UI/Aardvark.Template.UI.fsproj": "src/Aardvark.Template.UI/Aardvark.Template.UI.fsproj",
-            "OpenGL/src/Aardvark.Template.UI/Model.fs": "src/Aardvark.Template.UI/Model.fs",
-            "OpenGL/src/Aardvark.Template.UI/App.fs": "src/Aardvark.Template.UI/App.fs",
-            "OpenGL/src/Aardvark.Template.UI/Program.fs": "src/Aardvark.Template.UI/Program.fs",
-            "OpenGL/src/Aardvark.Template.UI/paket.references": "src/Aardvark.Template.UI/paket.references"}
-        },
-        {
-          "include": ["Vulkan/**", "Vulkan/.config/**", "Vulkan/src/**"],
-          "exclude": [
-            "Vulkan/.paket/**",
-            "Vulkan/paket-files/**",
-            "Vulkan/Aardvark.log",
-            "Vulkan/src/[Bb]in/**",
-            "Vulkan/src/[Oo]bj/**"
-          ],
-          "condition": "(backend == \"vulkan\")",
-          "rename": {"Vulkan/.config/dotnet-tools.json": ".config/dotnet-tools.json",
-            "Vulkan/paket.dependencies": "paket.dependencies",
-            "Vulkan/paket.lock": "paket.lock",
-            "Vulkan/.gitignore": ".gitignore",
-
-            "Vulkan/src/Aardvark.Template.UI/Aardvark.Template.UI.fsproj": "src/Aardvark.Template.UI/Aardvark.Template.UI.fsproj",
-            "Vulkan/src/Aardvark.Template.UI/Model.fs": "src/Aardvark.Template.UI/Model.fs",
-            "Vulkan/src/Aardvark.Template.UI/App.fs": "src/Aardvark.Template.UI/App.fs",
-            "Vulkan/src/Aardvark.Template.UI/Program.fs": "src/Aardvark.Template.UI/Program.fs",
-            "Vulkan/src/Aardvark.Template.UI/paket.references": "src/Aardvark.Template.UI/paket.references"}
+          "text": "Run 'build.cmd'"
         }
       ]
     }
