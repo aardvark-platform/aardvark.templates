@@ -3,7 +3,7 @@
 # Install
 
 ```
-$ dotnet new -i Aardvark.Templates
+$ dotnet new install Aardvark.Templates
 ```
 
 # How to create project
@@ -35,7 +35,7 @@ or alternatively:
 $ dotnet new aardvark.ui --name TestApp --backend opengl
 ```
 
-There are two backends that are available for aardvark applications: OpenGL and Vulkan.
+Two backends are available for aardvark applications: OpenGL and Vulkan.
 You can choose between them using parameter `--backend`. You can see the description of the parameter by running:
 
 ```
@@ -46,7 +46,7 @@ After the test application has been created, it can be built via the `build.cmd`
 
 # Build
 
-To build and test templates from package use `aardpack` and install the resulting `*.nupkg`:
+To build and test templates use `aardpack` and install the resulting `*.nupkg`:
 
 ```
 $ dotnet tool restore
