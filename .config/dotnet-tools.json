@@ -3,7 +3,7 @@
     "isRoot": true,
     "tools": {
       "aardpack": {
-        "version": "1.0.14",
+        "version": "1.0.21",
         "commands": [
           "aardpack"
         ]

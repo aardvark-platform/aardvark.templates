@@ -57,7 +57,7 @@ module App =
             ]
         ]
 
-    let app =
+    let app : App<Model, AdaptiveModel, Message> =
         {
             initial = initial
             update = update
