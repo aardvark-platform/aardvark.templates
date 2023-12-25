@@ -1,3 +1,10 @@
+[![Discord](https://badgen.net/discord/online-members/UyecnhM)](https://discord.gg/UyecnhM)
+[![license](https://img.shields.io/github/license/aardvark-platform/aardvark.templates.svg)](https://github.com/aardvark-platform/aardvark.templates/blob/master/LICENSE)
+
+[The Aardvark Platform](https://aardvarkians.com/) |
+[Gallery](https://github.com/aardvark-platform/aardvark.docs/wiki/Gallery) | 
+[Packages&Repositories](https://github.com/aardvark-platform/aardvark.docs/wiki/Packages-and-Repositories)
+
 .NET Core SDK templates for bootstrapping new Aardvark projects.
 
 # Install
