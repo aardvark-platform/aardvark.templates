@@ -1,19 +1,11 @@
 FSharp.Core
 
-FSharp.Data.Adaptive
-Aardvark.Base
-Aardvark.Base.Incremental
-Aardvark.Base.FSharp
-
-Aardvark.Rendering
 Aardvark.Application.Slim
 //#if (backend = "opengl")
 Aardvark.Application.Slim.GL
 //#elif (backend = "vulkan")
 Aardvark.Application.Slim.Vulkan
 //#endif
-Aardvark.SceneGraph
-Aardvark.SceneGraph.IO
 
 Aardvark.Service
 Aardvark.UI

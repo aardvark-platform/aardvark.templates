@@ -1,10 +1,5 @@
 FSharp.Core
 
-FSharp.Data.Adaptive
-Aardvark.Base
-Aardvark.Base.Incremental
-Aardvark.Base.FSharp
-
 Aardvark.Rendering
 Aardvark.Application.Slim
 //#if (backend = "opengl")
