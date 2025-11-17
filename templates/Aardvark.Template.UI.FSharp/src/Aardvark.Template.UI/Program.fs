@@ -33,6 +33,12 @@ let main args =
         width 1024
         height 768
         url "http://localhost:4321/"
+#if DEBUG
+        debug true
+        log (fun msg -> Report.Line(2, $"[Aardium] {msg}"))
+#else
+        debug false
+#endif
     }
 
     0
