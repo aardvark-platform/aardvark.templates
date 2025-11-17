@@ -1,9 +1,13 @@
-[![Discord](https://badgen.net/discord/online-members/UyecnhM)](https://discord.gg/UyecnhM)
-[![license](https://img.shields.io/github/license/aardvark-platform/aardvark.templates.svg)](https://github.com/aardvark-platform/aardvark.templates/blob/master/LICENSE)
+[![Publish](https://github.com/aardvark-platform/aardvark.templates/actions/workflows/publish.yml/badge.svg)](https://github.com/aardvark-platform/aardvark.templates/actions/workflows/publish.yml)
+[![Nuget](https://img.shields.io/nuget/vpre/aardvark.templates)](https://www.nuget.org/packages/aardvark.templates/)
+[![Downloads](https://img.shields.io/nuget/dt/aardvark.templates)](https://www.nuget.org/packages/aardvark.templates/)
+
+[![Discord](https://img.shields.io/discord/611129394764840960?label=Discord)](https://discord.gg/UyecnhM)
+[![License](https://img.shields.io/github/license/aardvark-platform/aardvark.templates.svg?label=License)](https://github.com/aardvark-platform/aardvark.templates/blob/master/LICENSE)
 
 [The Aardvark Platform](https://aardvarkians.com/) |
 [Gallery](https://github.com/aardvark-platform/aardvark.docs/wiki/Gallery) | 
-[Packages&Repositories](https://github.com/aardvark-platform/aardvark.docs/wiki/Packages-and-Repositories)
+[Packages & Repositories](https://github.com/aardvark-platform/aardvark.docs/wiki/Packages-and-Repositories)
 
 .NET Core SDK templates for bootstrapping new Aardvark projects.
 
