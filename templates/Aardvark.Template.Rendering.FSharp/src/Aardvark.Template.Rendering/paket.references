@@ -1,6 +1,7 @@
 FSharp.Core
 
 Aardvark.Rendering
+Aardvark.Rendering.ImGui
 Aardvark.Application.Slim
 //#if (backend = "opengl")
 Aardvark.Application.Slim.GL

@@ -1,6 +1,7 @@
 ﻿open System
 open Aardvark.Base
 open Aardvark.Rendering
+open Aardvark.Rendering.ImGui
 open Aardvark.SceneGraph
 open Aardvark.Application
 open Aardvark.Application.Slim
@@ -16,6 +17,14 @@ let main argv =
     use app = new VulkanApplication()
     #endif
     use win = app.CreateGameWindow(4)
+    use gui = win.InitializeImGui()
+
+    let backgroundColor = AVal.init C3f.Black
+
+    gui.Render <- fun () ->
+        if ImGui.Begin("Settings", ImGuiWindowFlags.AlwaysAutoResize) then
+            ImGui.ColorEdit3("Background color", backgroundColor, ImGuiColorEditFlags.NoInputs)
+        ImGui.End()
 
     let quadGeometry =
         IndexedGeometry(
@@ -32,7 +41,7 @@ let main argv =
     let view = initialView |> DefaultCameraController.control win.Mouse win.Keyboard win.Time
     let proj = win.Sizes |> AVal.map (fun s -> Frustum.perspective 60.0 0.1 100.0 (float s.X / float s.Y))
 
-    let sg =
+    let quadSg =
         quadGeometry
             |> Sg.ofIndexedGeometry
             |> Sg.effect [
@@ -41,6 +50,14 @@ let main argv =
                ]
             |> Sg.viewTrafo (view |> AVal.map CameraView.viewTrafo)
             |> Sg.projTrafo (proj |> AVal.map Frustum.projTrafo)
+
+    let sg =
+        RenderCommand.Ordered [
+            RenderCommand.Clear backgroundColor
+            RenderCommand.Render quadSg
+            RenderCommand.Render gui
+        ]
+        |> Sg.execute
 
     let task =
         app.Runtime.CompileRender(win.FramebufferSignature, sg)
