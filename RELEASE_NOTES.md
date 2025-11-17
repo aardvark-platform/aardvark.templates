@@ -1,3 +1,8 @@
+### 2.1.3
+- Updated to Aardvark.Rendering 5.6 and Aardvark.UI 5.6
+- [Rendering] Added ImGUi
+- [UI] Added debug switch for Aardium
+
 ### 2.1.2
 - Updated to Aardvark.Rendering 5.5 and Aardvark.UI 5.5
 - Updated to net8.0 projects
