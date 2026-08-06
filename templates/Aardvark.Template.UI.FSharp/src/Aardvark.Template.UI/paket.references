@@ -7,8 +7,8 @@ Aardvark.Application.Slim.GL
 Aardvark.Application.Slim.Vulkan
 //#endif
 
-Aardvark.Service
 Aardvark.UI
+Aardvark.UI.Giraffe
 Aardvark.UI.Primitives
 Adaptify.MSBuild
 Aardium

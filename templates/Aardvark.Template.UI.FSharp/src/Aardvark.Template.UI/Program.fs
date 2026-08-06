@@ -1,31 +1,25 @@
 ﻿open Aardvark.Template.UI
 
-open System
-open FSharp.Data.Adaptive
-
 open Aardvark.Base
-open Aardvark.Rendering
-open Aardvark.Application
 open Aardvark.Application.Slim
-open Aardvark.Service
 open Aardvark.UI
+open Aardvark.UI.Giraffe
 open Aardium
-open Suave
-open Suave.WebPart
 
 [<EntryPoint>]
 let main args =
     Aardvark.Init()
-    Aardium.init()
+    Aardium.Init()
 
     #if (backend = "opengl")
     use app = new OpenGlApplication()
     #elif (backend = "vulkan")
     use app = new VulkanApplication()
     #endif
+    use mapp = App.start App.app
 
-    WebPart.startServerLocalhost 4321 [
-        MutableApp.toWebPart' app.Runtime false (App.start App.app)
+    Server.startLocalhost 4321 mapp.CancellationToken [
+        MutableApp.toWebPart' app.Runtime false mapp
     ] |> ignore
 
     Aardium.run {
