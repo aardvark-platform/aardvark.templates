@@ -13,15 +13,15 @@
 
 # Install
 
-```
-$ dotnet new install Aardvark.Templates
+```bash
+dotnet new install Aardvark.Templates
 ```
 
 # How to create project
 
 After installation two templates will be added:
 
-```
+```bash
 $ dotnet new
 
 ...
@@ -34,23 +34,23 @@ Aardvark.UI Application                           aardvark.ui             F#    
 
 To create the project use the `dotnet new` command:
 
-```
-$ mkdir TestApp
-$ cd TestApp
-$ dotnet new aardvark.ui --backend opengl
+```bash
+mkdir TestApp
+cd TestApp
+dotnet new aardvark.ui --backend opengl
 ```
 
 or alternatively:
 
-```
-$ dotnet new aardvark.ui --name TestApp --backend opengl
+```bash
+dotnet new aardvark.ui --name TestApp --backend opengl
 ```
 
 Two backends are available for aardvark applications: OpenGL and Vulkan.
 You can choose between them using parameter `--backend`. You can see the description of the parameter by running:
 
-```
-$ dotnet new aardvark.ui --help
+```bash
+dotnet new aardvark.ui --help
 ```
 
 After the test application has been created, it can be built via the `build.cmd` or `build.sh` script.
@@ -59,10 +59,10 @@ After the test application has been created, it can be built via the `build.cmd`
 
 To build and test templates use `aardpack` and install the resulting `*.nupkg`:
 
-```
-$ dotnet tool restore
-$ dotnet aardpack Aardvark.Templates.csproj
-$ dotnet new install .\bin\pack\*.nupkg
+```bash
+dotnet tool restore
+dotnet aardpack Aardvark.Templates.csproj
+dotnet new install .\bin\pack\*.nupkg
 ```
 
 # Packages
