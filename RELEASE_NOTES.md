@@ -1,3 +1,7 @@
+### 2.1.4
+- [UI] Updated to Aardvark.UI 5.7
+- [UI] Fixed debug switch for Aardium
+
 ### 2.1.3
 - Updated to Aardvark.Rendering 5.6 and Aardvark.UI 5.6
 - [Rendering] Added ImGUi
