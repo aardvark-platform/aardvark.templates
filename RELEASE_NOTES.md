@@ -1,3 +1,7 @@
+### 2.1.5
+- Added solution files
+- Fixed build post action for Linux / macOS
+
 ### 2.1.4
 - [UI] Updated to Aardvark.UI 5.7
 - [UI] Fixed debug switch for Aardium
