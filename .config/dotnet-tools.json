@@ -1,12 +1,13 @@
 {
-    "version": 1,
-    "isRoot": true,
-    "tools": {
-      "aardpack": {
-        "version": "2.0.5",
-        "commands": [
-          "aardpack"
-        ]
-      }
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "aardpack": {
+      "version": "2.0.7",
+      "commands": [
+        "aardpack"
+      ],
+      "rollForward": false
     }
   }
+}
