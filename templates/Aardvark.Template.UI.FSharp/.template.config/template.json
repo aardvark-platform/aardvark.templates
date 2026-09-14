@@ -43,14 +43,37 @@
   ],
   "postActions": [
     {
-      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "description": "Making build script executable on Linux/macOS",
+      "actionId": "CB9A6CF3-4F5C-4860-B9D2-03A574959774",
+      "condition": "(OS != \"Windows_NT\")",
       "args": {
-        "executable": "build.cmd"
+        "+x": [ "build.sh" ]
+      }
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "description": "Build solution",
+      "condition": "(OS == \"Windows_NT\")",
+      "args": {
+        "executable": "cmd.exe",
+        "args": "/c build.cmd"
       },
       "manualInstructions": [
         {
-          "text": "Run 'build.cmd'"
+          "text": "Run 'build.cmd' to build the solution."
         }
+      ]
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "description": "Build solution",
+      "condition": "(OS != \"Windows_NT\")",
+      "args": {
+        "executable": "bash",
+        "args": "-c \"./build.sh\""
+      },
+      "manualInstructions": [
+        { "text": "Run 'build.sh' to build the solution." }
       ]
     }
   ]

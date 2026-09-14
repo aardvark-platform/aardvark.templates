@@ -62,7 +62,7 @@ To build and test templates use `aardpack` and install the resulting `*.nupkg`:
 ```bash
 dotnet tool restore
 dotnet aardpack Aardvark.Templates.csproj
-dotnet new install .\bin\pack\*.nupkg
+dotnet new install ./bin/pack/*.nupkg
 ```
 
 # Packages

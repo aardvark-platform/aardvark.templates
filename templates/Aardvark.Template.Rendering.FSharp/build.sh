@@ -2,4 +2,4 @@
 
 dotnet tool restore
 dotnet paket restore
-dotnet build src/Aardvark.Template.Rendering/Aardvark.Template.Rendering.fsproj
+dotnet build src/Aardvark.Template.Rendering.slnx
