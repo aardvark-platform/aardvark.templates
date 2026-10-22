@@ -1,3 +1,6 @@
+### 2.1.6
+- Update to .NET 10
+
 ### 2.1.5
 - Added solution files
 - Fixed build post action for Linux / macOS
